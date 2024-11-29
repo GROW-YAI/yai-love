@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import LandingPage from "./pages/landing";
 import { FaArrowUp } from 'react-icons/fa';
-// import PreLoader from './components/preloader';
+import PreLoader from './components/preloader';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,8 +14,15 @@ function App() {
     });
   };
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
     <>
+      {isLoading ? (
+        <PreLoader onLoadingComplete={handleLoadingComplete} />
+      ) : (
         <div>
           <LandingPage />
 
@@ -28,6 +35,7 @@ function App() {
             <FaArrowUp size={24} />
           </button>
         </div>
+      )}
     </>
   );
 }
