@@ -37,7 +37,7 @@ const Home = () => {
               }
               className="bg-naturalBrown text-pureWhite px-6 py-2 rounded shadow-lg hover:bg-secondary transition"
             >
-              Explore Our Products
+              Our Products
             </button>
             <button
               onClick={() =>
@@ -57,7 +57,7 @@ const Home = () => {
           {/* Quote */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
             <p className="text-4xl font-serif font-bold text-secondary tracking-widest">
-              From Shell to Shine: Beauty Born from Nature's Unlikely Gift
+              From Shell to Shine
             </p>
           </div>
 
