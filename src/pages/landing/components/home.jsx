@@ -55,9 +55,13 @@ const Home = () => {
         {/* Bottom Half */}
         <div className="h-1/2 flex flex-col justify-between relative space-y-3">
           {/* Quote */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <p className="text-4xl font-serif font-bold text-secondary tracking-widest">
-              From Shell to Shine
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center space-y-4">
+            <p className="text-5xl font-playfair font-bold text-secondary tracking-wider leading-snug">
+              From <span className="text-primary">Shell</span> to{" "}
+              <span className="text-primary">Shine</span>
+            </p>
+            <p className="text-lg font-serif text-secondary/70 italic">
+              Beauty Born from Nature's Unlikely Gift
             </p>
           </div>
 
