@@ -55,9 +55,9 @@ const Products = () => {
               <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
                 <h3 className="text-2xl font-serif font-bold">{card.title}</h3>
                 <p className="mt-4 text-sm">{card.description}</p>
-                <button className="mt-6 self-start text-sm font-medium underline group-hover:text-primary transition-colors">
+                <a href="#contact" className="mt-6 self-start text-sm font-medium underline group-hover:text-primary transition-colors">
                   Contact &rarr;
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}
