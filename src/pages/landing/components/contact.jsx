@@ -1,3 +1,4 @@
+// src/pages/landing/components/contact.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
@@ -44,7 +45,7 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="bg-softNeutral py-16 relative"
+      className="bg-primary py-16 relative"
     >
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12">
         {/* Contact Information */}
@@ -154,7 +155,7 @@ const Contact = () => {
       </div>
 
       {/* Decorative Element */}
-      <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10" />
+      {/* <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10" /> */}
     </section>
   );
 };

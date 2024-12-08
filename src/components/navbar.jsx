@@ -9,13 +9,40 @@ const Navbar = () => {
   const menuRef = useRef(null);
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(id);
-      setIsMenuOpen(false);
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
     }
+    setActiveSection(id); // Update active section on click
   };
+
+  // Intersection Observer to track active section
+  useEffect(() => {
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6, // Adjust for when a section is considered "visible"
+    });
+
+    // Observe all sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -42,21 +69,14 @@ const Navbar = () => {
         className="container mx-auto px-4 py-3 flex justify-between items-center relative"
         ref={menuRef}
       >
-        {/* Brand Logo with Unique Styling */}
+        {/* Brand Logo */}
         <motion.div
-          whileHover={{ 
-            scale: 1.05,
-            rotate: 3
-          }}
+          whileHover={{ scale: 1.05, rotate: 3 }}
           className="flex items-center space-x-3 cursor-pointer group"
           onClick={() => scrollToSection('home')}
         >
-          <Droplet 
-            className="w-10 h-10 text-naturalBrown group-hover:text-secondary 
-            transition-colors duration-300 transform group-hover:rotate-12"
-          />
-          <h1 className="text-3xl font-handwritten tracking-wide text-secondary 
-            group-hover:text-naturalBrown transition-colors duration-300">
+          <Droplet className="w-10 h-10 text-naturalBrown group-hover:text-secondary transition-colors duration-300 transform group-hover:rotate-12" />
+          <h1 className="text-3xl font-handwritten tracking-wide text-secondary group-hover:text-naturalBrown transition-colors duration-300">
             Eggshell Elixir
           </h1>
         </motion.div>
@@ -67,29 +87,24 @@ const Navbar = () => {
             <motion.button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              whileHover={{ 
-                scale: 1.1,
-                translateY: -5
-              }}
+              whileHover={{ scale: 1.1, translateY: -5 }}
               whileTap={{ scale: 0.95 }}
-              className={`
-                flex items-center space-x-2 transition-all duration-300 
-                group relative
-                ${activeSection === link.id 
-                  ? 'text-naturalBrown font-bold' 
-                  : 'text-secondary/70 hover:text-secondary'}
-              `}
+              className={`flex items-center space-x-2 transition-all duration-300 group relative ${
+                activeSection === link.id
+                  ? 'text-naturalBrown font-bold'
+                  : 'text-secondary/70 hover:text-secondary'
+              }`}
             >
               {React.cloneElement(link.icon, {
-                className: `w-5 h-5 group-hover:text-naturalBrown 
-                  ${activeSection === link.id ? 'text-naturalBrown' : ''}`
+                className: `w-5 h-5 group-hover:text-naturalBrown ${
+                  activeSection === link.id ? 'text-naturalBrown' : ''
+                }`,
               })}
               <span>{link.name}</span>
-              {/* Hover Underline */}
-              <span 
-                className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-naturalBrown 
-                  transition-all duration-300 group-hover:w-full 
-                  ${activeSection === link.id ? 'w-full' : ''}`}
+              <span
+                className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-naturalBrown transition-all duration-300 group-hover:w-full ${
+                  activeSection === link.id ? 'w-full' : ''
+                }`}
               />
             </motion.button>
           ))}
@@ -101,11 +116,7 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden text-secondary"
         >
-          {isMenuOpen ? (
-            <X className="w-8 h-8 animate-spin" />
-          ) : (
-            <Menu className="w-8 h-8" />
-          )}
+          {isMenuOpen ? <X className="w-8 h-8 animate-spin" /> : <Menu className="w-8 h-8" />}
         </motion.button>
 
         {/* Mobile Dropdown Menu */}
@@ -128,15 +139,14 @@ const Navbar = () => {
                     stiffness: 100,
                   }}
                   onClick={() => scrollToSection(link.id)}
-                  className={`
-                    w-full text-left p-4 flex items-center space-x-3
-                    hover:bg-accent/20 transition-colors group
-                    ${activeSection === link.id ? 'bg-accent/30' : ''}
-                  `}
+                  className={`w-full text-left p-4 flex items-center space-x-3 hover:bg-accent/20 transition-colors group ${
+                    activeSection === link.id ? 'bg-accent/30' : ''
+                  }`}
                 >
                   {React.cloneElement(link.icon, {
-                    className: `w-6 h-6 group-hover:text-naturalBrown 
-                      ${activeSection === link.id ? 'text-naturalBrown' : 'text-secondary'}`
+                    className: `w-6 h-6 group-hover:text-naturalBrown ${
+                      activeSection === link.id ? 'text-naturalBrown' : 'text-secondary'
+                    }`,
                   })}
                   <span className="text-secondary group-hover:text-naturalBrown transition-colors">
                     {link.name}
