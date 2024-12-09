@@ -1,8 +1,10 @@
-// src/App.jsx
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landing";
-import { FaArrowUp } from 'react-icons/fa';
-import PreLoader from './components/preloader';
+import NotFoundPage from "./components/notFound"; // Import the 404 page component
+import ErrorBoundary from "./components/ErrorBoundary"; // Import the ErrorBoundary
+import { FaArrowUp } from "react-icons/fa";
+import PreLoader from "./components/preloader";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +12,7 @@ function App() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -19,12 +21,18 @@ function App() {
   };
 
   return (
-    <>
+    <ErrorBoundary> {/* Wrap the entire app in ErrorBoundary */}
       {isLoading ? (
         <PreLoader onLoadingComplete={handleLoadingComplete} />
       ) : (
-        <div>
-          <LandingPage />
+        <Router>
+          <Routes>
+            {/* Define route for the landing page */}
+            <Route path="/" element={<LandingPage />} />
+            
+            {/* Catch-all route for 404 */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
 
           {/* Scroll to Top Button */}
           <button
@@ -34,9 +42,9 @@ function App() {
           >
             <FaArrowUp size={24} />
           </button>
-        </div>
+        </Router>
       )}
-    </>
+    </ErrorBoundary>
   );
 }
 
