@@ -21,12 +21,10 @@ const Home = () => {
         {/* Top Half */}
         <div className="flex flex-col items-center justify-center h-1/2 text-center bg-softNeutral">
           <h1 className="text-4xl font-bold text-secondary">
-            From Eggshells to Elegance
+            Ewura Skin Care and More
           </h1>
           <p className="text-naturalBrown mt-4 max-w-2xl mx-auto">
-            Discover the beauty of nature's most overlooked resource. We
-            transform eggshells into luxurious, eco-friendly beauty soaps that
-            nourish your skin while protecting the planet.
+            Transforming eggshells into innovative, eco-friendly personal care products that enhance well-being while protecting our planet.
           </p>
           <div className="mt-6 space-x-4">
             <button
@@ -57,11 +55,10 @@ const Home = () => {
           {/* Quote */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center space-y-4">
             <p className="text-5xl font-playfair font-bold text-secondary tracking-wider leading-snug">
-              From <span className="text-primary">Shell</span> to{" "}
-              <span className="text-primary">Shine</span>
+              <span className="text-primary">Green Beauty</span>
             </p>
             <p className="text-lg font-serif text-secondary/70 italic">
-              Beauty Born from Nature's Unlikely Gift
+              A Feel of Paradise
             </p>
           </div>
 

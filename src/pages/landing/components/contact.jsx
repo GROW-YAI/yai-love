@@ -1,4 +1,3 @@
-// src/pages/landing/components/contact.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
@@ -45,7 +44,7 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="bg-primary py-16 relative"
+      className="bg-gradient-to-r from-accent via-accent to-[#88d8e9] py-16 relative"
     >
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12">
         {/* Contact Information */}
@@ -66,7 +65,7 @@ const Contact = () => {
               <Mail className="w-6 h-6 text-naturalBrown" />
               <div>
                 <p className="text-secondary font-semibold">Email</p>
-                <p className="text-secondary/80">hello@eggshellelixir.com</p>
+                <p className="text-secondary/80">support@ewuraskincare.com</p>
               </div>
             </div>
 
@@ -74,7 +73,7 @@ const Contact = () => {
               <Phone className="w-6 h-6 text-naturalBrown" />
               <div>
                 <p className="text-secondary font-semibold">Phone</p>
-                <p className="text-secondary/80">+1 (234) 567-890</p>
+                <p className="text-secondary/80">+233 (0) 123-456-789</p>
               </div>
             </div>
 
@@ -82,7 +81,7 @@ const Contact = () => {
               <MapPin className="w-6 h-6 text-naturalBrown" />
               <div>
                 <p className="text-secondary font-semibold">Address</p>
-                <p className="text-secondary/80">123 Eggshell Lane, Beauty City, BC 12345</p>
+                <p className="text-secondary/80">456 Green Beauty Lane, Accra, Ghana</p>
               </div>
             </div>
           </div>
@@ -143,7 +142,7 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full bg-naturalBrown text-white p-3 rounded-lg 
+              className="w-full bg-primary text-white p-3 rounded-lg 
               hover:bg-secondary transition-colors flex items-center 
               justify-center space-x-2"
             >
@@ -153,9 +152,6 @@ const Contact = () => {
           </form>
         </motion.div>
       </div>
-
-      {/* Decorative Element */}
-      {/* <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10" /> */}
     </section>
   );
 };

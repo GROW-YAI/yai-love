@@ -8,14 +8,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#F5E6D3", // Soft eggshell beige
-        secondary: "#4A4238", // Rich, deep brown reminiscent of natural soap
-        accent: "#E6D2B5", // Warm, creamy eggshell tone
-        background: "#FFFFFF", // Pure white for clean feel
-        softNeutral: "#F9F5F0", // Delicate off-white with warm undertones
-        naturalBrown: "#8B4513", // Earthy soap-like brown
-        creamyEggshell: "#F3E5AB", // Soft, warm eggshell color
-        pureWhite: "#FFFFFF", // Pristine white for purity
+        primary: "#14A061", // Deep green from the logo
+        secondary: "#0BA6C7", // Blue element from the logo
+        accent: "#C2E6D6", // Light mint green for accents
+        background: "#FFFFFF", // Clean white base
+        textPrimary: "#000000", // Black for text clarity
+        textSecondary: "#0BA6C7", // Blue for secondary text
+        softNeutral: "#F5F5F5", // Light neutral background
       },
     },
   },
@@ -24,15 +23,14 @@ export default {
     themes: [
       {
         mytheme: {
-          primary: "#F5E6D3", // Soft eggshell beige
-          secondary: "#4A4238", // Deep brown
-          accent: "#E6D2B5", // Creamy accent
-          neutral: "#F9F5F0", // Soft neutral tone
-          "base-100": "#FFFFFF", // Pure white background
-          "base-200": "#F9F5F0", // Slightly warmer background
-          info: "#87CEEB", // Soft sky blue for information
-          success: "#2E8B57", // Sea green for success
-          warning: "#DEB887", // Burlywood for warnings
+          primary: "#14A061", // Deep green for primary actions
+          secondary: "#0BA6C7", // Blue for highlights
+          accent: "#C2E6D6", // Light mint green accents
+          neutral: "#F5F5F5", // Neutral tones for balance
+          "base-100": "#FFFFFF", // Clean white background
+          info: "#0BA6C7", // Same blue for information messages
+          success: "#14A061", // Deep green for success
+          warning: "#FFD700", // Gold for warnings
           error: "#CD5C5C", // Indian red for errors
         },
       },

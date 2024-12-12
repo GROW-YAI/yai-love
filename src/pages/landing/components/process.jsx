@@ -7,13 +7,10 @@ const Process = () => {
         {/* Left Column: Heading, Text, and Button */}
         <div className="space-y-6">
           <h2 className="text-4xl font-serif font-bold text-secondary">
-            Discover the Power of Our Products
+            Our Process: From Eggshells to Elegance
           </h2>
           <p className="text-secondary/80">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-            vitae erat.
+            At Ewura Skin Care, we believe in transforming nature's overlooked resources into premium personal care products. Our unique process ensures sustainability, quality, and innovation at every step.
           </p>
         </div>
 
@@ -22,11 +19,10 @@ const Process = () => {
           {/* Step 1 */}
           <div className="p-6 bg-white rounded-lg shadow-md relative">
             <h3 className="text-xl font-serif font-bold text-secondary">
-              Discover the Power of Natural Ingredients
+              Step 1: Sourcing Natural Ingredients
             </h3>
             <p className="text-secondary/80 mt-2">
-              Learn about the carefully selected natural ingredients that form
-              the foundation of Eggshell Elixir's products.
+              We begin by sourcing high-quality, natural ingredients, including upcycled eggshells, to craft eco-friendly products that care for your skin and the planet.
             </p>
             <div className="absolute top-3 right-3 text-5xl font-bold text-gray-200">
               01
@@ -36,11 +32,10 @@ const Process = () => {
           {/* Step 2 */}
           <div className="p-6 bg-primary-light rounded-lg shadow-md relative">
             <h3 className="text-xl font-serif font-bold text-secondary">
-              Step 2
+              Step 2: Innovating Sustainable Solutions
             </h3>
             <p className="text-secondary/80 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique.
+              Through advanced research and innovation, we transform these natural ingredients into effective formulas, ensuring sustainability at every stage.
             </p>
             <div className="absolute top-3 right-3 text-5xl font-bold text-gray-200">
               02

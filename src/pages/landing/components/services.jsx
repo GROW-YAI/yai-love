@@ -13,7 +13,7 @@ const Products = () => {
   };
 
   return (
-    <section id="products" className="bg-accent py-20"> {/* Updated background color */}
+    <section id="products" className="bg-accent py-20">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <motion.div
@@ -23,10 +23,10 @@ const Products = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-serif font-bold text-secondary">
-            Services Offered
+            Products and Services
           </h2>
-          <p className="text-secondary/80 mt-4">
-            Explore tailored beauty services designed for your ultimate self-care at Eggshell ELIXIR.
+          <p className="textPrimary/80 mt-4">
+            Discover our innovative range of eco-friendly personal care products, crafted from upcycled eggshells to promote sustainability and well-being.
           </p>
         </motion.div>
 

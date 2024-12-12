@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Droplet, Menu, X } from 'lucide-react';
 import K from '../constants';
+import loveImg from '../assets/love-logo-1-1.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,7 +64,7 @@ const Navbar = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, type: 'spring', stiffness: 50 }}
-      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-primary via-softNeutral to-accent shadow-lg"
+      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-softNeutral  to-accent shadow-lg"
     >
       <div
         className="container mx-auto px-4 py-3 flex justify-between items-center relative"
@@ -71,14 +72,14 @@ const Navbar = () => {
       >
         {/* Brand Logo */}
         <motion.div
-          whileHover={{ scale: 1.05, rotate: 3 }}
+          whileHover={{ scale: 2.05 }}
           className="flex items-center space-x-3 cursor-pointer group"
           onClick={() => scrollToSection('home')}
         >
-          <Droplet className="w-10 h-10 text-naturalBrown group-hover:text-secondary transition-colors duration-300 transform group-hover:rotate-12" />
-          <h1 className="text-3xl font-handwritten tracking-wide text-secondary group-hover:text-naturalBrown transition-colors duration-300">
+          <img src={loveImg} alt="Brand Logo" className="w-60 h-15 transition-transform duration-300 group-hover:rotate-12" />
+          {/* <h1 className="text-4xl font-handwritten tracking-wide text-secondary group-hover:text-naturalBrown transition-colors duration-300">
             Eggshell Elixir
-          </h1>
+          </h1> */}
         </motion.div>
 
         {/* Desktop Navigation */}
