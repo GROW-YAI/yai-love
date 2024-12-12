@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landing";
-import NotFoundPage from "./components/notFound"; // Import the 404 page component
-import ErrorBoundary from "./components/ErrorBoundary"; // Import the ErrorBoundary
+import NotFoundPage from "./components/notFound";
+import ErrorBoundary from "./components/errorBoundary";
 import { FaArrowUp } from "react-icons/fa";
 import PreLoader from "./components/preloader";
 
