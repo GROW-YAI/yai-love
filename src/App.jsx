@@ -37,7 +37,7 @@ function App() {
           {/* Scroll to Top Button */}
           <button
             onClick={scrollToTop}
-            className="fixed bottom-10 right-10 p-3 bg-primary rounded-full shadow-lg text-white hover:bg-secondary"
+            className="fixed z-50 bottom-10 right-10 p-3 bg-primary rounded-full shadow-lg text-white hover:bg-secondary"
             aria-label="Scroll to Top"
           >
             <FaArrowUp size={24} />

@@ -23,7 +23,7 @@ const Home = () => {
           <h1 className="text-4xl font-bold text-secondary">
             Ewura Skin Care and More
           </h1>
-          <p className="text-naturalBrown mt-4 max-w-2xl mx-auto">
+          <p className="textPrimary mt-4 max-w-2xl mx-auto">
             Transforming eggshells into innovative, eco-friendly personal care products that enhance well-being while protecting our planet.
           </p>
           <div className="mt-6 space-x-4">
@@ -33,7 +33,7 @@ const Home = () => {
                   .getElementById("products")
                   .scrollIntoView({ behavior: "smooth" })
               }
-              className="bg-naturalBrown text-pureWhite px-6 py-2 rounded shadow-lg hover:bg-secondary transition"
+              className="bg-primary text-neutral px-6 py-2 rounded shadow-lg hover:bg-secondary transition"
             >
               Our Products
             </button>
@@ -43,7 +43,7 @@ const Home = () => {
                   .getElementById("about")
                   .scrollIntoView({ behavior: "smooth" })
               }
-              className="border border-naturalBrown text-naturalBrown px-6 py-2 rounded shadow-lg hover:bg-softNeutral hover:text-secondary transition"
+              className="border border-primary text-primary px-6 py-2 rounded shadow-lg hover:bg-softNeutral hover:text-secondary transition"
             >
               Learn More
             </button>
