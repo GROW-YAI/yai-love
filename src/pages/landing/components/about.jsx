@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import aboutImg from '../../../assets/aboutimg.png';
+import aboutImg from '../../../assets/combo-all.jpeg';
 
 const AboutSection = () => {
   const sectionVariants = {

@@ -1,9 +1,12 @@
 // src/constants/index.jsx
 import { Droplet } from 'lucide-react';
-import aboutimg from '../assets/aboutimg.png';
-import showergelImg from '../assets/aboutimg.png';
-import shampooImg from '../assets/aboutimg.png';
-import handwashingsoapImg from '../assets/aboutimg.png';
+import product1Img from '../assets/combo-all.jpeg';
+import product2Img from '../assets/handsoap.jpeg';
+import product3Img from '../assets/shampoo.jpeg';
+import product4Img from '../assets/shampoo&gel.jpeg';
+import showergelImg from '../assets/shampoo&gel.jpeg';
+import shampooImg from '../assets/shampoo.jpeg';
+import handwashingsoapImg from '../assets/handsoap.jpeg';
 
 const K = {
   NAVLINKS: [
@@ -36,11 +39,10 @@ const K = {
   ],
 
   HERO_IMAGES: [
-    { src: aboutimg },
-    { src: aboutimg },
-    { src: aboutimg },
-    { src: aboutimg },
-    { src: aboutimg },
+    { src: product1Img },
+    { src: product2Img },
+    { src: product3Img },
+    { src: product4Img },
   ],
 
   PRODUCTS_CARDS : [
