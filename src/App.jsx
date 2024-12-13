@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <ErrorBoundary> {/* Wrap the entire app in ErrorBoundary */}
+    <ErrorBoundary>
       {isLoading ? (
         <PreLoader onLoadingComplete={handleLoadingComplete} />
       ) : (

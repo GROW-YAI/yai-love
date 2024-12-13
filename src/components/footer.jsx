@@ -118,7 +118,7 @@ const Footer = () => {
             </button>
           </form>
         </div> */}
-        <img src={loveImg} alt="Brand Logo" className="w-70 h-40" />
+        <img src={loveImg} alt="Brand Logo" className="w-auto h-auto" />
 
       </div>
 

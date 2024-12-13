@@ -76,7 +76,7 @@ const Navbar = () => {
           className="flex items-center space-x-3 cursor-pointer group"
           onClick={() => scrollToSection('home')}
         >
-          <img src={loveImg} alt="Brand Logo" className="w-60 h-16 transition-transform duration-300 group-hover:rotate-12" />
+          <img src={loveImg} alt="Brand Logo" className="w-auto h-12 transition-transform duration-300 group-hover:rotate-12" />
           {/* <h1 className="text-4xl font-handwritten tracking-wide text-secondary group-hover:text-naturalBrown transition-colors duration-300">
             Eggshell Elixir
           </h1> */}
