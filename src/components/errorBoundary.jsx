@@ -42,7 +42,7 @@ class ErrorBoundary extends Component {
             <div className="mt-12">
               <img
                 src={loveLogo}
-                alt="Joya Foods Logo"
+                alt="Ewura Skin Care Logo"
                 className="w-48 h-auto"
               />
             </div>
