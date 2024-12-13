@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Droplet, Menu, X } from 'lucide-react';
 import K from '../constants';
-import loveImg from '../assets/love-logo-1-1.png';
+import loveImg from '../assets/love-logo-2-2.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,7 +64,7 @@ const Navbar = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, type: 'spring', stiffness: 50 }}
-      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-softNeutral  to-accent shadow-lg"
+      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r to-softNeutral  from-primary shadow-lg"
     >
       <div
         className="container mx-auto px-4 py-3 flex justify-between items-center relative"
@@ -76,7 +76,7 @@ const Navbar = () => {
           className="flex items-center space-x-3 cursor-pointer group"
           onClick={() => scrollToSection('home')}
         >
-          <img src={loveImg} alt="Brand Logo" className="w-auto h-12 transition-transform duration-300 group-hover:rotate-12" />
+          <img src={loveImg} alt="Brand Logo" className="w-auto h-34 h-14 transition-transform duration-300 group-hover:rotate-12" />
           {/* <h1 className="text-4xl font-handwritten tracking-wide text-secondary group-hover:text-naturalBrown transition-colors duration-300">
             Eggshell Elixir
           </h1> */}
@@ -92,18 +92,18 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
               className={`flex items-center space-x-2 transition-all duration-300 group relative ${
                 activeSection === link.id
-                  ? 'text-naturalBrown font-bold'
-                  : 'text-secondary/70 hover:text-secondary'
+                  ? 'text-secondary/90 font-bold'
+                  : 'textPrimary hover:text-secondary'
               }`}
             >
               {React.cloneElement(link.icon, {
-                className: `w-5 h-5 group-hover:text-naturalBrown ${
-                  activeSection === link.id ? 'text-naturalBrown' : ''
+                className: `w-5 h-5 group-hover:text-secondary/100 ${
+                  activeSection === link.id ? 'text-secondary/100' : ''
                 }`,
               })}
               <span>{link.name}</span>
               <span
-                className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-naturalBrown transition-all duration-300 group-hover:w-full ${
+                className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary/100 transition-all duration-300 group-hover:w-full ${
                   activeSection === link.id ? 'w-full' : ''
                 }`}
               />
@@ -117,7 +117,7 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden text-secondary"
         >
-          {isMenuOpen ? <X className="w-8 h-8 animate-spin" /> : <Menu className="w-8 h-8" />}
+          {isMenuOpen ? <X className="w-8 h-8 animate-bounce" /> : <Menu className="w-8 h-8" />}
         </motion.button>
 
         {/* Mobile Dropdown Menu */}

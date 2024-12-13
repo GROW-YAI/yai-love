@@ -29,7 +29,7 @@ const Process = () => {
       We source high-quality, natural ingredients, including upcycled eggshells, to craft eco-friendly products that care for your skin and the planet.
     </p>
     <div className="absolute bottom-0 right-0 w-12 h-12 bg-secondary rounded-tl-full flex justify-center items-center text-white">
-      <span className="text-2xl font-bold">&#8594;</span>
+      <span className="text-2xl font-bold"></span>
     </div>
   </div>
 
@@ -46,7 +46,7 @@ const Process = () => {
       Through advanced research and innovation, we transform these natural ingredients into effective formulas, ensuring sustainability at every stage.
     </p>
     <div className="absolute bottom-0 right-0 w-12 h-12 bg-secondary rounded-tl-full flex justify-center items-center text-white">
-      <span className="text-2xl font-bold">&#8594;</span>
+      <span className="text-2xl font-bold"></span>
     </div>
   </div>
 </div>

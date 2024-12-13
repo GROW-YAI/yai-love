@@ -1,6 +1,6 @@
 import React from 'react';
 import { Droplet, Mail, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
-import loveImg from '../assets/love-logo-1.jpeg';
+import loveImg from '../assets/love-logo-2.jpeg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
