@@ -1,33 +1,12 @@
+// src/components/footer.jsx
 import React from 'react';
-import { Droplet, Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa';
 import loveImg from '../assets/love-logo-2.jpeg';
+import K from '../constants';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      icon: <Instagram className="w-6 h-6 hover:text-primary transition-colors" />,
-      href: "https://www.instagram.com/ewura_skincare_and_more?igsh=YnowODcyZHpod2Nz&utm_source=ig_contact_invite",
-    },
-    {
-      icon: <Facebook className="w-6 h-6 hover:text-primary transition-colors" />,
-      href: "https://www.facebook.com/share/15eQP2xB5G/?mibextid=LQQJ4d",
-    },
-    {
-      icon: <FaTiktok className="w-6 h-6 hover:text-primary transition-colors" />,
-      href: "https://www.tiktok.com/@ewura.skincare_?_t=8s9ujN07DB0&_r=1",
-    },
-  ];
-
-  const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Products', href: '#products' },
-    { name: 'Our Process', href: '#process' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact', href: '#contact' },
-  ];
 
   return (
     <footer className="bg-softNeutral text-secondary py-12 px-4">
@@ -46,7 +25,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex space-x-4">
-            {socialLinks.map((link, index) => (
+            {K.SOCIAL_LINKS.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
@@ -66,7 +45,7 @@ const Footer = () => {
             Quick Links
           </h3>
           <ul className="space-y-2">
-            {quickLinks.map((link, index) => (
+            {K.QUICK_LINKS.map((link, index) => (
               <li key={index}>
                 <a
                   href={link.href}
@@ -87,16 +66,16 @@ const Footer = () => {
           <div className="space-y-3">
             <div className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-primary" />
-              <span>info@ewuraskincare.com</span>
+              <span>contact.ewuraskincare@gmail.com</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-primary" />
-              <span>+233 (0) 244-342-108 </span>
+              <span>0244342108 / 0503086485</span>
             </div>
-            <div className="flex items-center space-x-3">
+            {/* <div className="flex items-center space-x-3">
               <MapPin className="w-5 h-5 text-primary" />
               <span>456 Green Beauty Lane, Accra, Ghana</span>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -106,7 +85,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-secondary/20 mt-8 pt-4 text-center">
         <p className="text-secondary/70">
-          © {currentYear} Ewura Skin Care. All Rights Reserved.
+          © {currentYear} Ewura Skin Care & More. All Rights Reserved.
         </p>
       </div>
     </footer>

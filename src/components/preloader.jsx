@@ -1,3 +1,4 @@
+// src/components/preloader.jsx
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Droplet, Feather, Waves } from 'lucide-react';
@@ -9,21 +10,25 @@ const PreLoader = ({ onLoadingComplete }) => {
     const totalTime = 2500; // Total loading time
     const interval = 50; // Update interval
     const steps = totalTime / interval;
-
+  
     const loadingTimer = setInterval(() => {
       setLoadingProgress((prevProgress) => {
         const newProgress = prevProgress + (100 / steps);
         if (newProgress >= 100) {
           clearInterval(loadingTimer);
-          onLoadingComplete();
+          // Defer state update to the next event loop cycle
+          setTimeout(() => {
+            onLoadingComplete();
+          }, 0);
           return 100;
         }
         return newProgress;
       });
     }, interval);
-
+  
     return () => clearInterval(loadingTimer);
   }, [onLoadingComplete]);
+  
 
   const containerVariants = {
     hidden: { opacity: 1 },
@@ -99,7 +104,7 @@ const PreLoader = ({ onLoadingComplete }) => {
 
       {/* Brand Text */}
       <h1 className="text-4xl font-handwritten tracking-wider text-secondary">
-        Eggshell Elixir
+        Ewura Skin Care & More
       </h1>
 
       {/* Progress Bar */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
@@ -6,7 +6,14 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
+  });
+
+  const [submitStatus, setSubmitStatus] = useState({
+    isSubmitting: false,
+    success: false,
+    error: false
   });
 
   const handleChange = (e) => {
@@ -17,16 +24,44 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log('Form Submitted', formData);
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setSubmitStatus({ isSubmitting: true, success: false, error: false });
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "955049f1-daa0-4920-b217-1919490372bc", // Web3Forms access key
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          from_name: "Ewura Skincare Contact Form"
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitStatus({ isSubmitting: false, success: true, error: false });
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus({ isSubmitting: false, success: false, error: true });
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus({ isSubmitting: false, success: false, error: true });
+    }
   };
 
   const sectionVariants = {
@@ -65,7 +100,8 @@ const Contact = () => {
               <Mail className="w-6 h-6 text-naturalBrown" />
               <div>
                 <p className="text-secondary font-semibold">Email</p>
-                <p className="text-secondary/80">support@ewuraskincare.com</p>
+                <p className="text-secondary/80">contact.ewuraskincare@gmail.com
+                </p>
               </div>
             </div>
 
@@ -73,17 +109,17 @@ const Contact = () => {
               <Phone className="w-6 h-6 text-naturalBrown" />
               <div>
                 <p className="text-secondary font-semibold">Phone</p>
-                <p className="text-secondary/80">+233 (0) 123-456-789</p>
+                <p className="text-secondary/80">0244342108 / 0503086485</p>
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <MapPin className="w-6 h-6 text-naturalBrown" />
               <div>
                 <p className="text-secondary font-semibold">Address</p>
                 <p className="text-secondary/80">456 Green Beauty Lane, Accra, Ghana</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
 
@@ -100,6 +136,18 @@ const Contact = () => {
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Status Messages */}
+            {submitStatus.success && (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                Your message has been sent successfully!
+              </div>
+            )}
+            {submitStatus.error && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                There was an error sending your message. Please try again.
+              </div>
+            )}
+
             <div className="space-y-4">
               <input
                 type="text"
@@ -125,6 +173,18 @@ const Contact = () => {
                 text-secondary placeholder-secondary/50"
               />
 
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Your Phone Number"
+                required
+                className="w-full p-3 border border-accent/50 rounded-lg 
+                focus:outline-none focus:ring-2 focus:ring-naturalBrown 
+                text-secondary placeholder-secondary/50"
+              />
+
               <textarea
                 name="message"
                 value={formData.message}
@@ -142,12 +202,17 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full bg-primary text-white p-3 rounded-lg 
-              hover:bg-secondary transition-colors flex items-center 
-              justify-center space-x-2"
+              disabled={submitStatus.isSubmitting}
+              className={`w-full text-white p-3 rounded-lg 
+              transition-colors flex items-center 
+              justify-center space-x-2 ${
+                submitStatus.isSubmitting 
+                  ? 'bg-gray-400 cursor-not-allowed' 
+                  : 'bg-primary hover:bg-secondary'
+              }`}
             >
               <Send className="w-5 h-5" />
-              <span>Send Message</span>
+              <span>{submitStatus.isSubmitting ? 'Sending...' : 'Send Message'}</span>
             </motion.button>
           </form>
         </motion.div>
