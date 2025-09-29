@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="flex items-center space-x-3 mb-4">
             {/* <Droplet className="w-10 h-10 text-primary" /> */}
             <h2 className="text-2xl font-serif font-bold text-secondary">
-              Ewura Skin Care & More
+              Ewura Skin Care Products & More
             </h2>
           </div>
           <p className="text-secondary/70 mb-4">
