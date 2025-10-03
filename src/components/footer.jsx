@@ -9,17 +9,17 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-softNeutral text-secondary py-12 px-4">
-      <div className="container mx-auto grid md:grid-cols-4 gap-8">
+    <footer className="bg-[#14A061] text-white text-secondary py-12 px-4">
+      <div className="container mx-auto grid md:grid-cols-4 gap-8 ">
         {/* Brand Section */}
         <div className="md:col-span-1">
           <div className="flex items-center space-x-3 mb-4">
             {/* <Droplet className="w-10 h-10 text-primary" /> */}
-            <h2 className="text-2xl font-serif font-bold text-secondary">
+            <h2 className="text-2xl text-white font-serif font-bold text-secondary">
               Ewura Skin Care & More
             </h2>
           </div>
-          <p className="text-secondary/70 mb-4">
+          <p className="text-secondary/70 mb-4 text-white">
             Leading the way in eco-friendly personal care. Transforming eggshells into luxurious skincare solutions for a sustainable future.
           </p>
 
@@ -31,7 +31,7 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-secondary hover:text-primary transition-colors"
+                className="text-secondary hover:text-primary transition-colors text-white"
               >
                 {link.icon}
               </a>
@@ -40,8 +40,8 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="md:col-span-1">
-          <h3 className="text-xl font-semibold mb-4 text-primary">
+        <div className="md:ml-16 md:col-span-1">
+          <h3 className="text-xl font-semibold mb-4 text-primary text-white">
             Quick Links
           </h3>
           <ul className="space-y-2">
@@ -49,7 +49,7 @@ const Footer = () => {
               <li key={index}>
                 <a
                   href={link.href}
-                  className="hover:text-primary transition-colors text-secondary/80"
+                  className="hover:text-primary transition-colors text-secondary/80 text-white"
                 >
                   {link.name}
                 </a>
@@ -60,16 +60,16 @@ const Footer = () => {
 
         {/* Contact Information */}
         <div className="md:col-span-1">
-          <h3 className="text-xl font-semibold mb-4 text-primary">
+          <h3 className="text-xl font-semibold mb-4 text-primary text-white">
             Contact Us
           </h3>
           <div className="space-y-3">
-            <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-primary" />
+            <div className="flex items-center">
+              <Mail className="w-5 h-5 text-primary -ml-5" />
               <span>contact.ewuraskincare@gmail.com</span>
             </div>
-            <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-primary" />
+            <div className="flex items-center">
+              <Phone className="w-5 h-5 text-primary -ml-5" />
               <span>0244342108 / 0503086485</span>
             </div>
             {/* <div className="flex items-center space-x-3">
@@ -84,7 +84,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-secondary/20 mt-8 pt-4 text-center">
-        <p className="text-secondary/70">
+        <p className="text-secondary/70 text-white">
           © {currentYear} Ewura Skin Care & More. All Rights Reserved.
         </p>
       </div>
