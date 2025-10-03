@@ -53,14 +53,14 @@ const Home = () => {
         {/* Bottom Half */}
         <div className="h-1/2 flex flex-col justify-between relative space-y-3">
           {/* Quote */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center space-y-4">
+          {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center space-y-4">
             <p className="text-5xl font-playfair font-bold text-secondary tracking-wider leading-snug">
               <span className="text-primary">Green Beauty</span>
             </p>
             <p className="text-lg font-serif text-secondary/70 italic">
               A Feel of Paradise
             </p>
-          </div>
+          </div> */}
 
           {/* Top Row (Slides right) */}
           <div className="h-1/2 flex overflow-hidden relative z-20">
