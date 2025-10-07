@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="md:col-span-1">
           <div className="flex items-center space-x-3 mb-4">
             {/* <Droplet className="w-10 h-10 text-primary" /> */}
-            <h2 className="text-2xl font-serif font-bold text-secondary">
+            <h2 className="text-2xl font-serif font-bold text-secondary text-white">
               Ewura Skin Care Products & More
             </h2>
           </div>
@@ -31,7 +31,7 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-secondary hover:text-primary transition-colors text-white"
+                className="text-secondary  hover:bg-[#19ABCA] hover:text-primary transition-colors text-white"
               >
                 {link.icon}
               </a>
